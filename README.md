@@ -21,9 +21,34 @@ JSON is a way of storing complex data into text.  It is so useful that it has be
 Today we will be reading and writing data from files.  There are many ways to read data from a file:
 * You can read a whole file into a single variable
 * You can read a file one line at a time, and store each line as an element of a list
-* 
-### XX Tasks
+
+### 2 Tasks
 
 ##### Task 1
-(x points) 
+Read the data from the file task01.txt
+Create a function called find().
+Find will require 1 input parameter that is a string literal.
+The return value is the line number (starting at 0) that the parameter to be found is on.
 
+Example:
+assert find('apple') == 0
+assert find('fish') == 5
+
+(2 points) 
+
+##### Task 2
+Read the data from the file task02.csv
+Allow the user to search for a stock symbol.
+If the stock symbol is found, display the name of the company
+If a multiple stocks match the symbol, say there are multiple stocks available
+If there is no match, say "no match found"
+
+Example:
+Enter stock symbol: AA
+There are 21 stocks with that symbol
+Enter stock symbol: AAPL
+Apple Inc.
+Enter stock symbol: YANG
+No matches
+
+(2 points)
