@@ -8,9 +8,8 @@ each student has:
   blocks A-D
   
 Your program should have a menu for people to be able to 
-call up an individual record
+read saved records at start
 display records
-edit records
+add new records
 save records
-write records
 """
