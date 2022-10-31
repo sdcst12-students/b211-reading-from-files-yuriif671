@@ -22,4 +22,22 @@ data = [
         }
       ]
 
-output = json.dumps(data)
+def writeData():
+    output = json.dumps(data)
+
+
+def main():
+    choice = None
+    while choice != "X":
+        while choice not in ["W","R","X"]:
+            choice = input("Do you want to read or write data [w/r]")
+            choice = choice.strip()
+            choice = choice.upper()
+        if choice == "W":
+            writeData()
+        elif choice == "R":
+            readData()
+    if
+
+if __name__ == "__main__":
+    main()
