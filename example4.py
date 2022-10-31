@@ -24,7 +24,20 @@ data = [
 
 def writeData():
     output = json.dumps(data)
+    filename = "dbase.txt"
+    try:
+        file = open(filename,'w')
+        file.write(output)
+        print("Write complete")
+    except Exception as e:
+        print(f"An error occurred {e}")
 
+def readData():
+    filename = "dbase.txt"
+    file = open(filename,'r')
+    raw = file.read()
+    result = json.loads(raw)
+    return result
 
 def main():
     choice = None
@@ -35,9 +48,13 @@ def main():
             choice = choice.upper()
         if choice == "W":
             writeData()
+            choice = None
         elif choice == "R":
-            readData()
-    if
+            data = readData()
+            print(f"Your retrieved data:\n{data}")
+        
+            choice = None
+
 
 if __name__ == "__main__":
     main()
