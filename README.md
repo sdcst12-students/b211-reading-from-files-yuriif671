@@ -19,12 +19,12 @@ https://en.wikipedia.org/wiki/JSON
 JSON is a way of storing complex data into text.  It is so useful that it has become quite standard to pass complex data between different applications using JSON.  A web page which uses Javascript to run its applications might send a request to a server that runs on Python or PHP.  That site will send data as JSON to the web page, where it is decoded and utilized in the Javascript environment.  JSON is very useful as a cross platform way of communicating! 
 
 Today we will be reading and writing data from files.  There are many ways to read data from a file:
-* You can read a whole file into a single variable
-* You can read a file one line at a time, and store each line as an element of a list
+* You can read a whole file into a single variable. You can then split up the giant string using the .split() function
+* You can read a file one line at a time, and store each line as an element of a list using the .readlines() function
 
-### 2 Tasks
+### 5 Tasks
 
-##### Task 1
+##### Task 1 Basic Search
 Read the data from the file task01.txt
 Create a function called find().
 Find will require 1 input parameter that is a string literal.
@@ -36,7 +36,28 @@ assert find('fish') == 5
 
 (2 points) 
 
-##### Task 2
+##### Task 2 Pythaogorean Triples
+Read the data from one of the task02 text files.
+The data from this file contains 3 numbers on each line.  Determine how many lines of this file contains Pythagorean triples.
+Pythagorean triples are numbers where all of the sides are integers, and the 3 sides form a right triangle.
+The triples contained are : { 2a : 6, 2b: 4, 2c: 11}
+
+##### Task 3 Sum of Values
+The file task03.txt contains a lot of data.  Each cluster of data is the number of points for that particular group.  Each blank line indicates a separator before the next group.
+Read the contents of task03.txt into your program and determine the points value of the cluster with largest sum.
+
+For sample data task03.txt, the largest sum should be 68787
+
+##### Task 4 Advanced Dungeons and Dragons
+the file task04.txt contains a matrix of values
+The row indicates the level of fighter. Row 1 is for a level 1 fighter, row 2 is for a level 2 fighter and so on
+
+In each row, the numers indicate the target number needed out of 20 to land a hit on a specific Armor Class, starting with
+10 on the left, followed by 9, then 8, all the way to -10 on the far right.
+
+Create a function that reads the specific value for a specific level and an armor class, and prints the target number needed.
+
+##### Task 5 Stock Search
 Read the data from the file task02.csv
 Allow the user to search for a stock symbol.
 If the stock symbol is found, display the name of the company

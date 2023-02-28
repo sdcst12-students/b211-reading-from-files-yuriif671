@@ -44,3 +44,13 @@ a list.  It uses a 'delimiter' to determine where to make the breaks.
 myList = data.split('\n')
 print(f"myList is now of type {type(myList)}")
 print(myList)
+
+'''
+You can also read a file line by line and store each line as a list. 
+Again, note that the lines will terminate with the \n character
+'''
+print("========================")
+filename = 'data01.txt'
+file = open(filename,'r')
+data = file.readlines()
+print(data)
