@@ -18,17 +18,22 @@ import csv
 def searchStock(ticker):
     data = list(csv.reader(open('task5.csv', 'r')))
 
-    
+    exact_matches = [i for i in data if i[0] == ticker]
 
-    matches = [i for i in data if ticker in i[0]]
-
-    if len(matches) == 1:
-        print(f"Company Name: {matches[0][1]}")
-    elif len(matches) > 1:
-        print(f"There are {len(matches)} companies that have {ticker} in their ticker")
+    if len(exact_matches) == 1:
+        print(f"Company Name: {exact_matches[0][1]}")
+    elif len(exact_matches) > 1:
+        print(f"There are {len(exact_matches)} companies with the exact ticker '{ticker}'.")
     else:
-        print("No match found.")
+        #if no exact, then partial
+        partial_matches = [i for i in data if ticker in i[0]]
+        
+        if len(partial_matches) > 1:
+            print(f"There are {len(partial_matches)} companies that have {ticker} in their ticker.")
+        elif len(partial_matches) == 1:
+            print(f"Company Name: {partial_matches[0][1]}")
+        else:
+            print("No match found.")
 
 ticker = input("Enter the stock symbol to search: ").strip().upper()
-
-searchStock(ticker) 
+searchStock(ticker)
