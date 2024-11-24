@@ -11,11 +11,10 @@ assert find('fish') == 5
 '''
 
 def find(needle):
-    with open('task01.txt', 'r') as file:
-        # Iterate through each line in the file
-        for line_number, line in enumerate(file, 0):
-            if needle.lower() in line.lower():
-                return line_number
+    file = open('task01.txt', 'r')
+    for line_number, line in enumerate(file):
+        if needle.lower() in line.lower():
+            return line_number
             
     pass
 

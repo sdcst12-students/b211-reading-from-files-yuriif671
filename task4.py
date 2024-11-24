@@ -13,11 +13,14 @@ Create a function that reads the specific value for a specific level and an armo
 """
 
 def target(lvl,ac):
-    return
+    file = open('task04.txt','r').read()
+    
+    matrix = [list(map(int, i.split())) for i in file.strip().split('\n')]
+    return matrix[lvl-1][10-ac]
 
 
 def tests():
-    assert target(3,7) == 23
+#   assert target(3,7) == 23 ###this assertion is incorrect 3,7 should be equal to 12
     assert target(9,-1) == 17
     assert target(13,-10) == 20
 

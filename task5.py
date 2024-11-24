@@ -13,3 +13,22 @@ Apple Inc.
 Enter stock symbol: YANG
 No matches
 """
+import csv
+
+def searchStock(ticker):
+    data = list(csv.reader(open('task5.csv', 'r')))
+
+    
+
+    matches = [i for i in data if ticker in i[0]]
+
+    if len(matches) == 1:
+        print(f"Company Name: {matches[0][1]}")
+    elif len(matches) > 1:
+        print(f"There are {len(matches)} companies that have {ticker} in their ticker")
+    else:
+        print("No match found.")
+
+ticker = input("Enter the stock symbol to search: ").strip().upper()
+
+searchStock(ticker) 
